@@ -6,6 +6,7 @@ class Search
 
   @withQueryForProject: (query, project, context, max=5) ->
     labels = []
+    console.log("TEST")
     if Config.labels.regex.test query
       labels = (query.match(Config.labels.regex).map((label) -> label.replace('#', '').trim())).concat(labels)
       query = query.replace Config.labels.regex, ""
